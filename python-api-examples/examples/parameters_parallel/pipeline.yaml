@@ -1,0 +1,15 @@
+tasks:
+
+  - source: tasks.tasks.make_single_data
+    product: "products/single/input_data.csv"
+    name: "make-data"
+  
+  - source: "tasks\\filter_data.py"
+    name: filter-data
+    product: 
+      nb: "products/single/filter.ipynb"
+      file: "products/single/cleaned.csv"
+
+  - source: tasks.tasks.integration
+    product: 
+      file: "products/single/area.csv"
